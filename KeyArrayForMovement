@@ -1,0 +1,50 @@
+boolean[] keys;
+float playerX = 50, playerY = 650;
+
+void setup(){
+  size(1366, 700);
+  keys=new boolean[4];
+  keys[0] = false;
+  keys[1] = false;
+  keys[2] = false; 
+  keys[3] = false;
+}
+void draw() {
+  background(150);
+  rect(playerX, playerY, 50, 50);
+  
+  if(keys[0]){
+    playerY -=10;
+  }
+  if(keys[1]){
+    playerX -=10;
+  }
+  if(keys[2]){ 
+    playerY +=10;
+  }
+  if(keys[3]){
+    playerX +=10;
+  }
+}
+
+void keyPressed(){ // Tracking when the key is pressed and released
+  if(key== 'w' || key == 'W')
+    keys[0]=true;
+  if(key== 'a' || key == 'A')
+    keys[1]=true;
+  if(key== 's' || key == 'S')
+    keys[2]=true;
+  if(key== 'd' || key == 'D')
+    keys[3]=true;
+}
+
+void keyReleased(){
+  if(key=='w' || key == 'W')
+    keys[0]=false;
+  if(key=='a' || key == 'A')
+    keys[1]=false;
+  if(key== 's' || key == 'S')
+    keys[2]=false;
+  if(key== 'd' || key == 'D')
+    keys[3]=false;
+} 
